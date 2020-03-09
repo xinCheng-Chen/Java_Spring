@@ -1,0 +1,56 @@
+page{
+  display: flex;
+  flex-direction: column;
+}
+
+.title{
+  margin: 20rpx 30rpx;
+  font-size: 26px;
+}
+
+.face{
+  width: 80rpx;
+  height: 80rpx;
+  border-radius: 50%;
+}
+
+.publish-info{
+  margin: 0 30rpx;
+  display: flex;
+  flex-direction: row;
+}
+
+.words{
+  margin-left: 30rpx;
+}
+
+.nickname{
+  font-size: 16px;
+}
+
+.normal-info{
+  display: flex;
+  flex-direction: row;
+  margin-top: 6rpx;
+}
+
+.original{
+  font-size: 10px;
+  color: gray;
+  border-radius: 10rpx;
+  background-color: white;
+  width: 70rpx;
+  height: 30rpx;
+  text-align: center;
+  border: solid 1px;
+}
+
+.create-time{
+  font-size: 10px;
+  color: gray;
+  margin-left: 20rpx;
+}
+
+.news-desc{
+  margin: 26rpx 30rpx;
+}

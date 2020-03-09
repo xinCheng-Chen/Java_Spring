@@ -1,0 +1,95 @@
+<scroll-view scroll-x="true" class="type">
+  <!-- <view class="type-item">新闻</view>
+  <view class="type-item">推荐</view>
+  <view class="type-item">汽车</view>
+  <view class="type-item">科技</view>
+  <view class="type-item">图片</view>
+  <view class="type-item">视频</view>
+  <view class="type-item">热点</view>
+  <view class="type-item">历史</view>
+  <view class="type-item">时政</view> -->
+
+  <block wx:for="{{types}}">
+    <view class='type-item {{index==defaultTypeIndex ? "type-red" : "type-none" }}' data-choosenindex="{{index}}" data-typeid='{{item.id}}' bindtap="switchNews">{{item.name}}</view>
+  </block>
+
+</scroll-view>
+<!-- 渲染新闻列表 -->
+<block wx:for="{{newsWrapperList}}">
+
+  <view data-newsid="{{item.news.id}}" bindtap="showDetail">
+    <block wx:if="{{item.news.imgType==0}}">
+      <view class="news">
+        <view class="news-title">{{item.news.title}}</view>
+        <view class="publish">
+          <view class="publisher">{{item.news.publisher}}</view>
+          <view class="creat-time">{{item.news.createTime}}</view>
+        </view>
+      </view>
+
+    </block>
+    <block wx:if="{{item.news.imgType==1}}">
+      <view class="news">
+        <view class="pic-words">
+          <view class="news-tittle tittle-words">{{item.news.title}}</view>
+          <block wx:for="{{item.coverImgArr}}" wx:for-item="img">
+            <image src="{{img}}" class="cover"></image>
+          </block>
+        </view>
+
+        <view class="publish">
+          <view class="publisher">{{item.news.publisher}}</view>
+          <view class="creat-time">{{item.news.createTime}}</view>
+        </view>
+      </view>
+    </block>
+    <block wx:if="{{item.news.imgType==3}}">
+      <view class="news">
+        <view class="news-tittle">{{item.news.title}}</view>
+        <view class="img-set">
+          <block wx:for="{{item.coverImgArr}}" wx:for-item="img">
+            <image src="{{img}}" class="cover"></image>
+          </block>
+        </view>
+        <view class="publish">
+          <view class="publisher">{{item.news.publisher}}</view>
+          <view class="creat-time">{{item.news.createTime}}</view>
+        </view>
+      </view>
+    </block>
+  </view>
+</block>
+<!--新闻列表-->
+<!-- 纯文字 -->
+<!-- <view class="news">
+  <view class="news-tittle">标题</view>
+  <view class="publish">
+    <view class="publisher">NEXT 学院</view>
+    <view class="creat-time">2019-11-10</view>
+  </view>
+</view> -->
+
+<!-- 三图新闻 -->
+<!-- <view class="news" data-newsid="10088" bindtap="showDetail">
+  <view class="news-tittle">标题</view>
+  <view class="img-set">
+    <image src='' class="cover"></image>
+    <image src='' class="cover"></image>
+    <image src='' class="cover"></image>
+  </view>
+  <view class="publish">
+    <view class="publisher">NEXT 学院</view>
+    <view class="creat-time">2019-11-10</view>
+  </view>
+</view> -->
+<!-- 单图新闻 -->
+<!-- <view class="news">
+  <view class="pic-words">
+    <view class="news-tittle tittle-words">标题</view>
+    <image src="" class="cover"></image>
+  </view>
+  <view class="publish">
+    <view class="publisher">NEXT 学院</view>
+    <view class="creat-time">2019-11-10</view>
+  </view>
+</view> -->
